@@ -1,0 +1,17 @@
+/usr/bin/ruby2.1 extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling ruby_http_parser.c
+ruby_http_parser.c: In function ‘Parser_execute’:
+ruby_http_parser.c:330:7: warning: format ‘%zu’ expects argument of type ‘size_t’, but argument 4 has type ‘long int’ [-Wformat=]
+       rb_raise(eParserError, "Could not parse data entirely (%zu != %zu)", nparsed, len);
+       ^
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20150702-5272-k2ig4c
+installing default ruby_http_parser libraries
